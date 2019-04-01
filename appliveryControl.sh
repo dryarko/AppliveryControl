@@ -41,6 +41,7 @@ function readAndSetAppId()
 		readAccountApiKey
 		status=""
 		{
+			authorizationPattern="Authorization:$accountApiKey"
 			request="https://dashboard.applivery.com/api/builds/app/$appId"
 			response=$(curl "$request" -H "$authorizationPattern")
 
@@ -133,15 +134,16 @@ function uploadToApplivery()
 		platform:$platform, tags:$tags, buildPath:$buildPath"
 
 	request="https://dashboard.applivery.com/api/builds"
-	requestArgs='-X POST \
+    response=$(curl "$request" \
+    	-X POST \
+    	-H "$authorizationPattern"
 	    -F app="$appId" \
 	    -F versionName="$versionName" \
 	    -F notes="$notes" \
 	    -F notify="$shouldNotify" \
 	    -F os="$platform" \
 	    -F tags="$tags" \
-	    -F package=@"$buildPath"'
-    response=$(curl "$request" "$requestArgs" -H "$authorizationPattern")
+	    -F package=@"$buildPath")
     
     if $(checkStatus "$response"); then
     	printf "Build successfully uploaded...\n"
