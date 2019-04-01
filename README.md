@@ -14,12 +14,12 @@ Created by Yaroslav Nevmerzhytskyi
 `./appliveryControl.sh`
 3. Open Applivery in your browser for initial setup.
 4. Go to 'Applications', select application and copy 'App ID' value from 'App details'.
-![Image](application.png "app")
-![Image](app-details.png "app_details")
+![alt text](./app.png)
+![alt text](./app_details.png)
 5. Paste to Terminal when requested.
 6. Go to 'Developers' and copy 'Account API Key'.
-![Image](application.png "dev")
-![Image](app-details.png "api_key")
+![alt text](./dev.png)
+![alt text](./api_key.png)
 7. Paste to Terminal when requested.
 8. If you wasn't requested to re-enter App ID everything went well.
 9. Close Terminal window and open a new one.
