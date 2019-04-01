@@ -1,5 +1,7 @@
 #!/bin/bash
-
+####################################
+#Created by Yaroslav Nevmerzhytskyi#
+####################################
 ######## Variables ########
 accountApiKey=""
 appId=""
