@@ -2,7 +2,6 @@
 Created by Yaroslav Nevmerzhytskyi
 
 # Known issues:
-* Issue with builds' Deletion: When multiple builds are requested to be removed and user skips deletion on validation step - other n-builds get re-selected from all builds.
 * Terminal window needs to be closed and reopened after initial setup.
 * Build Uploading is currently commented out.
 * One Application and one user is currently supported.
