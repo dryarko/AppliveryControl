@@ -214,14 +214,14 @@ function getBuildInformation()
 
 function deleteBuild()
 {
-	amount=$1
+	toRemove=$1
 
 	printf "Starting build deletion...\n"
 
 	listBuilds "suppressLogs"
 	sortBuildsByDate
 
-	buildIds=$(echo "$sortedBuilds" | jq --arg amount $amount '.[0:($amount | tonumber)] | .[]._id')
+	buildIds=$(echo "$sortedBuilds" | jq --arg toRemove $toRemove '.[0:($toRemove | tonumber)] | .[]._id')
 
 	for buildId in $buildIds
 	do
